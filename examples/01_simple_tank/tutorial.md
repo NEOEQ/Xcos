@@ -5,3 +5,5 @@
 3. [Implementation into XCOS]
 
 <h2> Introduction </h2>
+
+In this example, a stirred tank is used to heat a fluid stream that is continuously fed into the tank. A coil, through which steam flows, provides heat to the tank. In this way, a PID controller is used to control the temperature of the tank.
