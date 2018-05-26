@@ -1,0 +1,479 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x3d385ac1, pid=6260, tid=1440
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_40-b26) (build 1.8.0_40-b26)
+# Java VM: Java HotSpot(TM) Client VM (25.40-b25 mixed mode windows-x86 )
+# Problematic frame:
+# C  0x3d385ac1
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0f1ec800):  JavaThread "SwingWorker-pool-2-thread-5" daemon [_thread_in_native, id=1440, stack(0x40340000,0x40440000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x2aa68530, EBX=0x2c3aa558, ECX=0x0000000c, EDX=0x00000000
+ESP=0x4043f190, EBP=0x4043f1c0, ESI=0x0000000c, EDI=0x00000004
+EIP=0x3d385ac1, EFLAGS=0x00010206
+
+Top of Stack: (sp=0x4043f190)
+0x4043f190:   80be6c1d 0f1ec800 2c3aa4d8 00000031
+0x4043f1a0:   0f1ec800 00000031 4043f1bc 3d3857d5
+0x4043f1b0:   2aa68530 4043f1e0 3d3c6b68 ffffffff
+0x4043f1c0:   4043f1ec 3d3867c9 4043f1d4 80be6c31
+0x4043f1d0:   3ddc70f0 2aa68530 2aa68538 2aa68538
+0x4043f1e0:   4043fb2c 3d3c4e98 00000000 4043f218
+0x4043f1f0:   3d37d8b7 00000050 00000000 00000004
+0x4043f200:   00000031 0000006b 00000000 0f1ec800 
+
+Instructions: (pc=0x3d385ac1)
+0x3d385aa1:   8b 4b 04 8b 13 8b 06 8b 7e 04 8b f1 2b f8 2b f2
+0x3d385ab1:   33 fe f7 c7 f8 ff ff ff 75 36 3b d1 74 19 2b c2
+0x3d385ac1:   8b 32 3b 34 10 75 29 8b 72 04 3b 74 10 04 75 20
+0x3d385ad1:   83 c2 08 3b d1 75 e9 b8 01 00 00 00 8b 4d f4 64 
+
+
+Register to memory mapping:
+
+EAX=0x2aa68530 is an unknown value
+EBX=0x2c3aa558 is an unknown value
+ECX=0x0000000c is an unknown value
+EDX=0x00000000 is an unknown value
+ESP=0x4043f190 is pointing into the stack for thread: 0x0f1ec800
+EBP=0x4043f1c0 is pointing into the stack for thread: 0x0f1ec800
+ESI=0x0000000c is an unknown value
+EDI=0x00000004 is an unknown value
+
+
+Stack: [0x40340000,0x40440000],  sp=0x4043f190,  free space=1020k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x3d385ac1
+C  0x3d3867c9
+C  0x3d37d8b7
+C  0x3d37fdaa
+C  0x0bcb6dee
+j  org.scilab.modules.xcos.JavaControllerJNI.Controller_setObjectProperty__SWIG_3(JLorg/scilab/modules/xcos/Controller;JIIJ)I+0
+j  org.scilab.modules.xcos.Controller.setObjectProperty(JLorg/scilab/modules/xcos/Kind;Lorg/scilab/modules/xcos/ObjectProperties;J)Lorg/scilab/modules/xcos/UpdateStatus;+25
+j  org.scilab.modules.xcos.io.sax.LinkHandler.startElement(Lorg/scilab/modules/xcos/io/HandledElement;Lorg/xml/sax/Attributes;)Lorg/scilab/modules/xcos/link/BasicLink;+323
+j  org.scilab.modules.xcos.io.sax.LinkHandler.startElement(Lorg/scilab/modules/xcos/io/HandledElement;Lorg/xml/sax/Attributes;)Ljava/lang/Object;+3
+j  org.scilab.modules.xcos.io.sax.XcosSAXHandler.startElement(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V+190
+J 1783 C1 com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(Lcom/sun/org/apache/xerces/internal/xni/QName;Lcom/sun/org/apache/xerces/internal/xni/XMLAttributes;Lcom/sun/org/apache/xerces/internal/xni/Augmentations;)V (318 bytes) @ 0x0c3121a0 [0x0c311e80+0x320]
+J 1748 C1 com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement()Z (1020 bytes) @ 0x0c2fe410 [0x0c2fd000+0x1410]
+J 336 C1 com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next()I (2345 bytes) @ 0x0c10d488 [0x0c10c5f0+0xe98]
+J 1742 C1 com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next()I (39 bytes) @ 0x0c2fb768 [0x0c2fb6d0+0x98]
+J 461 C1 com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Z)Z (272 bytes) @ 0x0c13a590 [0x0c13a390+0x200]
+j  com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Z)Z+123
+j  com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Lcom/sun/org/apache/xerces/internal/xni/parser/XMLInputSource;)V+29
+j  com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Lcom/sun/org/apache/xerces/internal/xni/parser/XMLInputSource;)V+76
+j  com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Lorg/xml/sax/InputSource;)V+43
+j  org.scilab.modules.xcos.io.spec.ContentEntry.load(Ljava/util/zip/ZipEntry;Ljava/io/InputStream;)V+60
+j  org.scilab.modules.xcos.io.spec.XcosPackage.load()V+107
+j  org.scilab.modules.xcos.io.XcosFileType$1.load(Ljava/lang/String;Lorg/scilab/modules/xcos/graph/XcosDiagram;)V+48
+j  org.scilab.modules.xcos.graph.XcosDiagram$13.doInBackground()Lorg/scilab/modules/xcos/graph/XcosDiagram;+51
+j  org.scilab.modules.xcos.graph.XcosDiagram$13.doInBackground()Ljava/lang/Object;+1
+j  javax.swing.SwingWorker$1.call()Ljava/lang/Object;+14
+J 1376 C1 java.util.concurrent.FutureTask.run()V (126 bytes) @ 0x0c271d60 [0x0c271cd0+0x90]
+j  javax.swing.SwingWorker.run()V+4
+J 1644 C1 java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V (225 bytes) @ 0x0c2ce3ac [0x0c2ce1e0+0x1cc]
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+C  0x59e55c05
+C  0x59f1b0be
+C  0x59e55c9e
+C  0x59e55e26
+C  0x59e55e97
+C  0x59dfafaf
+C  0x59e78f3c
+C  0x59e7902a
+C  0x59ebd616
+C  [MSVCR100.dll+0x5c6de]
+C  [MSVCR100.dll+0x5c788]
+C  [KERNEL32.DLL+0x162c4]
+C  [ntdll.dll+0x60f79]
+C  [ntdll.dll+0x60f44]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.scilab.modules.xcos.JavaControllerJNI.Controller_setObjectProperty__SWIG_3(JLorg/scilab/modules/xcos/Controller;JIIJ)I+0
+j  org.scilab.modules.xcos.Controller.setObjectProperty(JLorg/scilab/modules/xcos/Kind;Lorg/scilab/modules/xcos/ObjectProperties;J)Lorg/scilab/modules/xcos/UpdateStatus;+25
+j  org.scilab.modules.xcos.io.sax.LinkHandler.startElement(Lorg/scilab/modules/xcos/io/HandledElement;Lorg/xml/sax/Attributes;)Lorg/scilab/modules/xcos/link/BasicLink;+323
+j  org.scilab.modules.xcos.io.sax.LinkHandler.startElement(Lorg/scilab/modules/xcos/io/HandledElement;Lorg/xml/sax/Attributes;)Ljava/lang/Object;+3
+j  org.scilab.modules.xcos.io.sax.XcosSAXHandler.startElement(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V+190
+J 1783 C1 com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(Lcom/sun/org/apache/xerces/internal/xni/QName;Lcom/sun/org/apache/xerces/internal/xni/XMLAttributes;Lcom/sun/org/apache/xerces/internal/xni/Augmentations;)V (318 bytes) @ 0x0c3121a0 [0x0c311e80+0x320]
+J 1748 C1 com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement()Z (1020 bytes) @ 0x0c2fe410 [0x0c2fd000+0x1410]
+J 336 C1 com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next()I (2345 bytes) @ 0x0c10d488 [0x0c10c5f0+0xe98]
+J 1742 C1 com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next()I (39 bytes) @ 0x0c2fb768 [0x0c2fb6d0+0x98]
+J 461 C1 com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Z)Z (272 bytes) @ 0x0c13a590 [0x0c13a390+0x200]
+j  com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Z)Z+123
+j  com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Lcom/sun/org/apache/xerces/internal/xni/parser/XMLInputSource;)V+29
+j  com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Lcom/sun/org/apache/xerces/internal/xni/parser/XMLInputSource;)V+76
+j  com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Lorg/xml/sax/InputSource;)V+43
+j  org.scilab.modules.xcos.io.spec.ContentEntry.load(Ljava/util/zip/ZipEntry;Ljava/io/InputStream;)V+60
+j  org.scilab.modules.xcos.io.spec.XcosPackage.load()V+107
+j  org.scilab.modules.xcos.io.XcosFileType$1.load(Ljava/lang/String;Lorg/scilab/modules/xcos/graph/XcosDiagram;)V+48
+j  org.scilab.modules.xcos.graph.XcosDiagram$13.doInBackground()Lorg/scilab/modules/xcos/graph/XcosDiagram;+51
+j  org.scilab.modules.xcos.graph.XcosDiagram$13.doInBackground()Ljava/lang/Object;+1
+j  javax.swing.SwingWorker$1.call()Ljava/lang/Object;+14
+J 1376 C1 java.util.concurrent.FutureTask.run()V (126 bytes) @ 0x0c271d60 [0x0c271cd0+0x90]
+j  javax.swing.SwingWorker.run()V+4
+J 1644 C1 java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V (225 bytes) @ 0x0c2ce3ac [0x0c2ce1e0+0x1cc]
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x0f1ec800 JavaThread "SwingWorker-pool-2-thread-5" daemon [_thread_in_native, id=1440, stack(0x40340000,0x40440000)]
+  0x0f1eb800 JavaThread "Image Fetcher 0" daemon [_thread_blocked, id=9684, stack(0x3f170000,0x3f270000)]
+  0x0f1e6800 JavaThread "Thread-9" [_thread_blocked, id=12744, stack(0x2cc60000,0x34c60000)]
+  0x0f1ea800 JavaThread "SwingWorker-pool-2-thread-4" daemon [_thread_blocked, id=12008, stack(0x3edd0000,0x3eed0000)]
+  0x0f1e9c00 JavaThread "Image Fetcher 3" daemon [_thread_blocked, id=11244, stack(0x00750000,0x00850000)]
+  0x0f1ec000 JavaThread "SwingWorker-pool-2-thread-3" daemon [_thread_blocked, id=6400, stack(0x3d260000,0x3d360000)]
+  0x0f1e8800 JavaThread "Swing-Shell" daemon [_thread_blocked, id=10804, stack(0x008d0000,0x009d0000)]
+  0x0f1ea000 JavaThread "SwingWorker-pool-2-thread-2" daemon [_thread_blocked, id=5976, stack(0x3ce20000,0x3cf20000)]
+  0x0f1e7c00 JavaThread "SwingWorker-pool-2-thread-1" daemon [_thread_blocked, id=4296, stack(0x3cce0000,0x3cde0000)]
+  0x0f1eb400 JavaThread "TimerQueue" daemon [_thread_blocked, id=12220, stack(0x2b2a0000,0x2b3a0000)]
+  0x0f1e9400 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=8760, stack(0x2aca0000,0x2ada0000)]
+  0x0f1eac00 JavaThread "AWT-Shutdown" [_thread_blocked, id=3120, stack(0x2aba0000,0x2aca0000)]
+  0x0f1e8c00 JavaThread "main-SharedResourceRunner" daemon [_thread_blocked, id=6492, stack(0x0fde0000,0x0fee0000)]
+  0x03355800 JavaThread "AWT-Windows" daemon [_thread_in_native, id=1756, stack(0x0f7d0000,0x0f8d0000)]
+  0x03353c00 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=14668, stack(0x0f550000,0x0f650000)]
+  0x03353400 JavaThread "Service Thread" daemon [_thread_blocked, id=8616, stack(0x0ebd0000,0x0ecd0000)]
+  0x0bf70c00 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=4416, stack(0x0ea90000,0x0eb90000)]
+  0x03354800 JavaThread "Attach Listener" daemon [_thread_blocked, id=8440, stack(0x0e950000,0x0ea50000)]
+  0x03354000 JavaThread "Finalizer" daemon [_thread_blocked, id=12720, stack(0x0e810000,0x0e910000)]
+  0x03354c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=13104, stack(0x0e6d0000,0x0e7d0000)]
+  0x03352c00 JavaThread "main" [_thread_in_native, id=14104, stack(0x000a0000,0x001a0000)]
+
+Other Threads:
+  0x0bf64800 VMThread [stack: 0x0e590000,0x0e690000] [id=2776]
+  0x0bfa1400 WatcherThread [stack: 0x0ed10000,0x0ee10000] [id=10576]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 11008K, used 1732K [0x18400000, 0x18ff0000, 0x1d950000)
+  eden space 9792K,   5% used [0x18400000, 0x18481088, 0x18d90000)
+  from space 1216K, 100% used [0x18ec0000, 0x18ff0000, 0x18ff0000)
+  to   space 1216K,   0% used [0x18d90000, 0x18d90000, 0x18ec0000)
+ tenured generation   total 24404K, used 16408K [0x1d950000, 0x1f125000, 0x28400000)
+   the space 24404K,  67% used [0x1d950000, 0x1e956060, 0x1e956200, 0x1f125000)
+ Metaspace       used 21563K, capacity 21853K, committed 21888K, reserved 21888K
+
+Card table byte_map: [0x0e060000,0x0e0f0000] byte_map_base: 0x0df9e000
+
+Polling page: 0x030f0000
+
+CodeCache: size=32768Kb used=3638Kb max_used=3638Kb free=29129Kb
+ bounds [0x0bfe0000, 0x0c370000, 0x0dfe0000]
+ total_blobs=2480 nmethods=2026 adapters=382
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 267.939 Thread 0x0bf70c00 2066             javax.swing.text.StyleContext::getCompressionThreshold (3 bytes)
+Event: 267.940 Thread 0x0bf70c00 nmethod 2066 0x0c36d148 code [0x0c36d240, 0x0c36d2c0]
+Event: 267.941 Thread 0x0bf70c00 2067             javax.swing.text.StyleContext::getEmptySet (4 bytes)
+Event: 267.941 Thread 0x0bf70c00 nmethod 2067 0x0c36d308 code [0x0c36d400, 0x0c36d480]
+Event: 267.942 Thread 0x0bf70c00 2068             javax.swing.text.StyleContext::reclaim (17 bytes)
+Event: 267.943 Thread 0x0bf70c00 nmethod 2068 0x0c36d4c8 code [0x0c36d610, 0x0c36d8dc]
+Event: 267.943 Thread 0x0bf70c00 2069             javax.swing.text.StyleContext::getImmutableUniqueSet (62 bytes)
+Event: 267.944 Thread 0x0bf70c00 nmethod 2069 0x0c36db88 code [0x0c36dcb0, 0x0c36de84]
+Event: 267.950 Thread 0x0bf70c00 2070             java.lang.Class::getEnumConstants (21 bytes)
+Event: 267.950 Thread 0x0bf70c00 nmethod 2070 0x0c36dfc8 code [0x0c36e0e0, 0x0c36e1c8]
+
+GC Heap History (10 events):
+Event: 264.909 GC heap before
+{Heap before GC invocations=26 (full 2):
+ def new generation   total 8000K, used 8000K [0x18400000, 0x18ca0000, 0x1d950000)
+  eden space 7168K, 100% used [0x18400000, 0x18b00000, 0x18b00000)
+  from space 832K, 100% used [0x18bd0000, 0x18ca0000, 0x18ca0000)
+  to   space 832K,   0% used [0x18b00000, 0x18b00000, 0x18bd0000)
+ tenured generation   total 17588K, used 16040K [0x1d950000, 0x1ea7d000, 0x28400000)
+   the space 17588K,  91% used [0x1d950000, 0x1e8fa3d8, 0x1e8fa400, 0x1ea7d000)
+ Metaspace       used 18444K, capacity 18671K, committed 18688K, reserved 18816K
+Event: 264.925 GC heap after
+Heap after GC invocations=27 (full 2):
+ def new generation   total 8000K, used 832K [0x18400000, 0x18ca0000, 0x1d950000)
+  eden space 7168K,   0% used [0x18400000, 0x18400000, 0x18b00000)
+  from space 832K, 100% used [0x18b00000, 0x18bd0000, 0x18bd0000)
+  to   space 832K,   0% used [0x18bd0000, 0x18bd0000, 0x18ca0000)
+ tenured generation   total 17588K, used 16902K [0x1d950000, 0x1ea7d000, 0x28400000)
+   the space 17588K,  96% used [0x1d950000, 0x1e9d18f8, 0x1e9d1a00, 0x1ea7d000)
+ Metaspace       used 18444K, capacity 18671K, committed 18688K, reserved 18816K
+}
+Event: 265.586 GC heap before
+{Heap before GC invocations=27 (full 2):
+ def new generation   total 8000K, used 8000K [0x18400000, 0x18ca0000, 0x1d950000)
+  eden space 7168K, 100% used [0x18400000, 0x18b00000, 0x18b00000)
+  from space 832K, 100% used [0x18b00000, 0x18bd0000, 0x18bd0000)
+  to   space 832K,   0% used [0x18bd0000, 0x18bd0000, 0x18ca0000)
+ tenured generation   total 17588K, used 16902K [0x1d950000, 0x1ea7d000, 0x28400000)
+   the space 17588K,  96% used [0x1d950000, 0x1e9d18f8, 0x1e9d1a00, 0x1ea7d000)
+ Metaspace       used 20060K, capacity 20318K, committed 20352K, reserved 20864K
+Event: 265.706 GC heap after
+Heap after GC invocations=28 (full 3):
+ def new generation   total 11008K, used 0K [0x18400000, 0x18ff0000, 0x1d950000)
+  eden space 9792K,   0% used [0x18400000, 0x18400000, 0x18d90000)
+  from space 1216K,   0% used [0x18d90000, 0x18d90000, 0x18ec0000)
+  to   space 1216K,   0% used [0x18ec0000, 0x18ec0000, 0x18ff0000)
+ tenured generation   total 24404K, used 14640K [0x1d950000, 0x1f125000, 0x28400000)
+   the space 24404K,  59% used [0x1d950000, 0x1e79c120, 0x1e79c200, 0x1f125000)
+ Metaspace       used 20057K, capacity 20313K, committed 20352K, reserved 20864K
+}
+Event: 266.259 GC heap before
+{Heap before GC invocations=28 (full 3):
+ def new generation   total 11008K, used 9792K [0x18400000, 0x18ff0000, 0x1d950000)
+  eden space 9792K, 100% used [0x18400000, 0x18d90000, 0x18d90000)
+  from space 1216K,   0% used [0x18d90000, 0x18d90000, 0x18ec0000)
+  to   space 1216K,   0% used [0x18ec0000, 0x18ec0000, 0x18ff0000)
+ tenured generation   total 24404K, used 14640K [0x1d950000, 0x1f125000, 0x28400000)
+   the space 24404K,  59% used [0x1d950000, 0x1e79c120, 0x1e79c200, 0x1f125000)
+ Metaspace       used 20657K, capacity 20894K, committed 20992K, reserved 21888K
+Event: 266.270 GC heap after
+Heap after GC invocations=29 (full 3):
+ def new generation   total 11008K, used 1216K [0x18400000, 0x18ff0000, 0x1d950000)
+  eden space 9792K,   0% used [0x18400000, 0x18400000, 0x18d90000)
+  from space 1216K, 100% used [0x18ec0000, 0x18ff0000, 0x18ff0000)
+  to   space 1216K,   0% used [0x18d90000, 0x18d90000, 0x18ec0000)
+ tenured generation   total 24404K, used 14906K [0x1d950000, 0x1f125000, 0x28400000)
+   the space 24404K,  61% used [0x1d950000, 0x1e7de9a8, 0x1e7dea00, 0x1f125000)
+ Metaspace       used 20657K, capacity 20894K, committed 20992K, reserved 21888K
+}
+Event: 266.924 GC heap before
+{Heap before GC invocations=29 (full 3):
+ def new generation   total 11008K, used 11008K [0x18400000, 0x18ff0000, 0x1d950000)
+  eden space 9792K, 100% used [0x18400000, 0x18d90000, 0x18d90000)
+  from space 1216K, 100% used [0x18ec0000, 0x18ff0000, 0x18ff0000)
+  to   space 1216K,   0% used [0x18d90000, 0x18d90000, 0x18ec0000)
+ tenured generation   total 24404K, used 14906K [0x1d950000, 0x1f125000, 0x28400000)
+   the space 24404K,  61% used [0x1d950000, 0x1e7de9a8, 0x1e7dea00, 0x1f125000)
+ Metaspace       used 20892K, capacity 21145K, committed 21248K, reserved 21888K
+Event: 266.937 GC heap after
+Heap after GC invocations=30 (full 3):
+ def new generation   total 11008K, used 869K [0x18400000, 0x18ff0000, 0x1d950000)
+  eden space 9792K,   0% used [0x18400000, 0x18400000, 0x18d90000)
+  from space 1216K,  71% used [0x18d90000, 0x18e69458, 0x18ec0000)
+  to   space 1216K,   0% used [0x18ec0000, 0x18ec0000, 0x18ff0000)
+ tenured generation   total 24404K, used 15614K [0x1d950000, 0x1f125000, 0x28400000)
+   the space 24404K,  63% used [0x1d950000, 0x1e88fb00, 0x1e88fc00, 0x1f125000)
+ Metaspace       used 20892K, capacity 21145K, committed 21248K, reserved 21888K
+}
+Event: 267.901 GC heap before
+{Heap before GC invocations=30 (full 3):
+ def new generation   total 11008K, used 10661K [0x18400000, 0x18ff0000, 0x1d950000)
+  eden space 9792K, 100% used [0x18400000, 0x18d90000, 0x18d90000)
+  from space 1216K,  71% used [0x18d90000, 0x18e69458, 0x18ec0000)
+  to   space 1216K,   0% used [0x18ec0000, 0x18ec0000, 0x18ff0000)
+ tenured generation   total 24404K, used 15614K [0x1d950000, 0x1f125000, 0x28400000)
+   the space 24404K,  63% used [0x1d950000, 0x1e88fb00, 0x1e88fc00, 0x1f125000)
+ Metaspace       used 21563K, capacity 21853K, committed 21888K, reserved 21888K
+Event: 267.919 GC heap after
+Heap after GC invocations=31 (full 3):
+ def new generation   total 11008K, used 1216K [0x18400000, 0x18ff0000, 0x1d950000)
+  eden space 9792K,   0% used [0x18400000, 0x18400000, 0x18d90000)
+  from space 1216K, 100% used [0x18ec0000, 0x18ff0000, 0x18ff0000)
+  to   space 1216K,   0% used [0x18d90000, 0x18d90000, 0x18ec0000)
+ tenured generation   total 24404K, used 16408K [0x1d950000, 0x1f125000, 0x28400000)
+   the space 24404K,  67% used [0x1d950000, 0x1e956060, 0x1e956200, 0x1f125000)
+ Metaspace       used 21563K, capacity 21853K, committed 21888K, reserved 21888K
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 264.940 Thread 0x0f1e9400 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x18416980) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u40\3098\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 264.949 Thread 0x0f1e9400 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x18459848) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u40\3098\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 264.952 Thread 0x0f1e9400 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x18463248) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u40\3098\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 265.299 Thread 0x0f1e9400 Exception <a 'java/lang/ClassNotFoundException': com/sun/org/glassfish/hk2/osgiresourcelocator/ServiceLoader> (0x185845e8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u40\3098\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 265.313 Thread 0x0f1e9400 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x185cc460) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u40\3098\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 265.314 Thread 0x0f1e9400 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x185cd388) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u40\3098\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 265.315 Thread 0x0f1e9400 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x185d2898) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u40\3098\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 265.315 Thread 0x0f1e9400 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x185d37a8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u40\3098\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 265.764 Thread 0x0f1e9c00 Exception <a 'java/lang/InterruptedException': sleep interrupted> (0x185c1310) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u40\3098\hotspot\src\share\vm\prims\jvm.cpp, line 3163]
+Event: 265.954 Thread 0x0f1ea800 Exception <a 'java/lang/NullPointerException'> (0x18825230) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u40\3098\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+
+Events (10 events):
+Event: 267.848 loading class org/scilab/modules/xcos/block/BasicBlock
+Event: 267.848 loading class org/scilab/modules/xcos/block/BasicBlock done
+Event: 267.849 loading class org/scilab/modules/xcos/graph/model/BlockInterFunction
+Event: 267.849 loading class org/scilab/modules/xcos/graph/model/BlockInterFunction done
+Event: 267.850 loading class org/scilab/modules/xcos/graph/model/BlockInterFunction
+Event: 267.850 loading class org/scilab/modules/xcos/graph/model/BlockInterFunction done
+Event: 267.900 Executing VM operation: BulkRevokeBias
+Event: 267.900 Executing VM operation: BulkRevokeBias done
+Event: 267.901 Executing VM operation: GenCollectForAllocation
+Event: 267.919 Executing VM operation: GenCollectForAllocation done
+
+
+Dynamic libraries:
+0x00400000 - 0x004e4000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\WScilex.exe
+0x775a0000 - 0x77723000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x74d80000 - 0x74e60000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x74f30000 - 0x750d1000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x10000000 - 0x102f6000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\ast.dll
+0x00030000 - 0x0003e000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\sciconsole.dll
+0x001d0000 - 0x001f2000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\core.dll
+0x004f0000 - 0x00502000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\output_stream.dll
+0x755d0000 - 0x7572f000 	C:\WINDOWS\System32\USER32.dll
+0x76e10000 - 0x76e3b000 	C:\WINDOWS\System32\GDI32.dll
+0x76df0000 - 0x76e05000 	C:\WINDOWS\System32\win32u.dll
+0x74590000 - 0x746ea000 	C:\WINDOWS\System32\gdi32full.dll
+0x74510000 - 0x74587000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00ae0000 - 0x00aef000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\scilab_windows.dll
+0x76d30000 - 0x76dee000 	C:\WINDOWS\System32\msvcrt.dll
+0x75110000 - 0x75151000 	C:\WINDOWS\System32\sechost.dll
+0x67e00000 - 0x67e71000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\MSVCP120.dll
+0x73f90000 - 0x74051000 	C:\WINDOWS\System32\RPCRT4.dll
+0x73f70000 - 0x73f8f000 	C:\WINDOWS\System32\SspiCli.dll
+0x73f60000 - 0x73f6a000 	C:\WINDOWS\System32\CRYPTBASE.dll
+0x74c60000 - 0x74d45000 	C:\WINDOWS\System32\COMDLG32.dll
+0x76e40000 - 0x76e9a000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x753b0000 - 0x755c1000 	C:\WINDOWS\System32\combase.dll
+0x67810000 - 0x678fe000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\MSVCR120.dll
+0x77050000 - 0x77130000 	C:\WINDOWS\System32\ucrtbase.dll
+0x76f50000 - 0x76fd8000 	C:\WINDOWS\System32\shcore.dll
+0x00b00000 - 0x00b17000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\functions_manager.dll
+0x758a0000 - 0x758e6000 	C:\WINDOWS\System32\SHLWAPI.dll
+0x00b20000 - 0x00b2d000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\scicommons.dll
+0x758f0000 - 0x76cc8000 	C:\WINDOWS\System32\SHELL32.dll
+0x752d0000 - 0x75306000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x746f0000 - 0x74c5e000 	C:\WINDOWS\System32\windows.storage.dll
+0x00b50000 - 0x00b61000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\scicompletion.dll
+0x741f0000 - 0x74235000 	C:\WINDOWS\System32\powrprof.dll
+0x00b70000 - 0x00b85000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\fileio.dll
+0x74f20000 - 0x74f2d000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00bb0000 - 0x00bc1000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\scihistory_manager.dll
+0x74060000 - 0x7406f000 	C:\WINDOWS\System32\profapi.dll
+0x00bd0000 - 0x00bda000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\libjvm.dll
+0x00c00000 - 0x00c0e000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\scilocalization.dll
+0x00c10000 - 0x00c20000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\libintl.dll
+0x00c40000 - 0x00c8b000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\scigui.dll
+0x00c90000 - 0x00c96000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\GetWindowsVersion.dll
+0x00cb0000 - 0x00d19000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\api_scilab.dll
+0x00d30000 - 0x00d38000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\dynamic_link.dll
+0x00d40000 - 0x00d54000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\fftw.dll
+0x00d90000 - 0x00df4000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\graphics.dll
+0x00e00000 - 0x00e33000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\io.dll
+0x00e40000 - 0x00e4b000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\preferences.dll
+0x00e80000 - 0x00e8e000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\tclsci.dll
+0x00e90000 - 0x00eae000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\sciui_data.dll
+0x00ec0000 - 0x00ec6000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\threads.dll
+0x00ed0000 - 0x00ee2000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\windows_tools.dll
+0x672f0000 - 0x673f0000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\libxml2.dll
+0x74240000 - 0x7432c000 	C:\WINDOWS\System32\ole32.dll
+0x67a80000 - 0x67a93000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\core_f.dll
+0x00f30000 - 0x00f41000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\string.dll
+0x6e790000 - 0x6e824000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.14393.447_none_5507ded2cb4f7f4c\COMCTL32.dll
+0x67a50000 - 0x67a7d000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\elementary_functions_f.dll
+0x00f60000 - 0x00f94000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\elementary_functions.dll
+0x67a30000 - 0x67a50000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\polynomials_f.dll
+0x67df0000 - 0x67dfa000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\linear_algebra_f.dll
+0x00fe0000 - 0x01042000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\coverage.dll
+0x5b380000 - 0x5bcc5000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\blasplus.dll
+0x5a630000 - 0x5b37e000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\lapack.dll
+0x01080000 - 0x010aa000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\external_objects.dll
+0x010b0000 - 0x010d6000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\xml.dll
+0x677c0000 - 0x67805000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\libcurl.dll
+0x74eb0000 - 0x74f13000 	C:\WINDOWS\System32\WS2_32.dll
+0x76cd0000 - 0x76d21000 	C:\WINDOWS\System32\WLDAP32.dll
+0x74330000 - 0x74337000 	C:\WINDOWS\System32\Normaliz.dll
+0x01100000 - 0x0110a000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\history_browser.dll
+0x01110000 - 0x01117000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\call_scilab.dll
+0x6e160000 - 0x6e2c9000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.14393.1715_none_f67438d2f2547a00\gdiplus.dll
+0x01140000 - 0x0117b000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\scigraphic_objects.dll
+0x67a20000 - 0x67a30000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\linpack_f.dll
+0x73500000 - 0x73645000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+0x011a0000 - 0x011ae000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\scirenderer.dll
+0x67200000 - 0x672e2000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\tcl85.dll
+0x670b0000 - 0x671fc000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\tk85.dll
+0x73f00000 - 0x73f24000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x75310000 - 0x753a4000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x75820000 - 0x7589b000 	C:\WINDOWS\System32\msvcp_win.dll
+0x72ba0000 - 0x72ba8000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x74d50000 - 0x74d75000 	C:\WINDOWS\System32\IMM32.dll
+0x677a0000 - 0x677b4000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\zlib1.dll
+0x66fd0000 - 0x670a6000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\MSVCR110.dll
+0x5bd90000 - 0x5bebc000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\libifcoremd.dll
+0x67760000 - 0x67792000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\pcre.dll
+0x750e0000 - 0x750f9000 	C:\WINDOWS\System32\imagehlp.dll
+0x67a00000 - 0x67a0b000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\eispack_f.dll
+0x676e0000 - 0x6770d000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\cacsd_f.dll
+0x66f80000 - 0x66fd0000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\slatec_f.dll
+0x5a240000 - 0x5a62c000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\libmmd.dll
+0x66c90000 - 0x66dab000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\libiomp5md.dll
+0x5bf10000 - 0x5bfce000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\MSVCR100.dll
+0x01220000 - 0x0122e000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\boolean_gw.dll
+0x01230000 - 0x0124f000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\cacsd.dll
+0x01250000 - 0x0125d000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\console_gw.dll
+0x012c0000 - 0x012ec000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\core_gw.dll
+0x012f0000 - 0x012fe000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\data_structures.dll
+0x01290000 - 0x012b8000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\differential_equations_gw.dll
+0x01330000 - 0x0133f000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\dynamic_link_gw.dll
+0x01340000 - 0x01384000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\elementary_functions_gw.dll
+0x01390000 - 0x013b1000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\fileio_gw.dll
+0x013d0000 - 0x013e5000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\graphics_gw.dll
+0x01420000 - 0x0142e000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\gui_gw.dll
+0x01430000 - 0x0143e000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\history_manager_gw.dll
+0x01440000 - 0x0145c000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\integer_gw.dll
+0x01470000 - 0x0148c000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\io_gw.dll
+0x014a0000 - 0x014ab000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\libjvm_gw.dll
+0x014d0000 - 0x014e9000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\linear_algebra_gw.dll
+0x01500000 - 0x0150d000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\localization_gw.dll
+0x01520000 - 0x01532000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\output_stream_gw.dll
+0x01550000 - 0x01566000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\polynomials.dll
+0x01580000 - 0x01597000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\sparse_gw.dll
+0x015b0000 - 0x015cf000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\string_gw.dll
+0x015d0000 - 0x015dc000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\time_gw.dll
+0x01610000 - 0x01633000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x5a170000 - 0x5a239000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\slicot_f.dll
+0x66f60000 - 0x66f74000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\output_stream_f.dll
+0x5a0c0000 - 0x5a168000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\differential_equations_f.dll
+0x016a0000 - 0x016b6000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\boolean.dll
+0x016c0000 - 0x016f1000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\differential_equations.dll
+0x01710000 - 0x0171a000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\linear_algebra.dll
+0x66f40000 - 0x66f5b000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\sparse_f.dll
+0x01740000 - 0x0174a000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\sparse.dll
+0x01760000 - 0x01767000 	D:\Program Files (x86)\scilab-6.0.0-beta-2\bin\time.dll
+
+VM Arguments:
+jvm_args: -Djava.library.path= -Djava.util.logging.config.file=D:\Program Files (x86)\scilab-6.0.0-beta-2/etc/logging.properties -Djava.compiler=JIT -Xmx256m -Xrs -Djogamp.gluegen.UseTempJarCache=false 
+java_command: <unknown>
+java_class_path (initial): D:\Program Files (x86)\scilab-6.0.0-beta-2/modules/jvm/jar/org.scilab.modules.jvm.jar
+Launcher Type: generic
+
+Environment Variables:
+USERNAME=Lizandro
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 14393 (10.0.14393.1198)
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 6174252k(1956672k free), swap 9975340k(3438652k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.40-b25) for windows-x86 JRE (1.8.0_40-b26), built on Mar  7 2015 13:51:08 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Oct 25 20:38:52 2017
+elapsed time: 268 seconds (0d 0h 4m 28s)
+
