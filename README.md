@@ -1,6 +1,6 @@
 <h1> XCOS Projects </h1>
 
-Welcome to the Xcos projects applied to chemical engineering. The purpose of this group is to make available Xcos engineering projects for the academic comunity.
+Welcome to the Xcos projects applied to chemical engineering processes. The purpose of this group is to make available Xcos engineering projects for the academic comunity.
 
 <h2> Description </h2>
 
